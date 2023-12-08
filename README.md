@@ -1,6 +1,5 @@
 ## Github Repositories ##
 Source code derived from: [[Duan's Repository](https://github.com/duanzhiihao/RAPiD#readme)]
-My own repository: [[My Repository](https://github.com/jaycelmarie/RAPiD-Fisheye.git)]
 
 ## Installation ##
 **Requirements**:
