@@ -24,32 +24,47 @@
         document.getElementById("openCam").addEventListener("click", camera_proxy)
     </py-script>
 
-    <!-- Select Image Button -->
-    <button type="button" id="selectImg">Select Image</button>
+    <!-- Select RAPID weight Image Button -->
+    <button type="button" id="rapid">RAPID</button>
     <py-script>
         from js import document
         from pyodide import create_proxy
 
-        def viewImage(self):
-            print("You have chosen to Select an Image.")
+        def rapidImg(self):
+            print("You have chosen to Select a RAPID image weight.")
         
-        image_proxy = create_proxy(viewImage)
+        rapid_proxy = create_proxy(rapidImg)
 
-        document.getElementById("selectImg").addEventListener("click", image_proxy)
+        document.getElementById("rapid").addEventListener("click", rapid_proxy)
     </py-script>
-    
-    <!-- Exit Button -->
-    <button type="button" id="exitBtn">Exit</button>
+
+    <!-- Select RAPID-FA weight Image Button -->
+    <button type="button" id="rapidFA">RAPID-FA</button>
     <py-script>
         from js import document
         from pyodide import create_proxy
 
-        def exit(self):
-            print("Exiting..")
+        def rapidFAImg(self):
+            print("You have chosen to Select a RAPIDFA image weight.")
         
-        exit_proxy = create_proxy(exit)
+        rapidFA_proxy = create_proxy(rapidFAImg)
 
-        document.getElementById("exitBtn").addEventListener("click", exit_proxy)
+        document.getElementById("rapidFA").addEventListener("click", rapidFA_proxy)
     </py-script>
+
+     <!-- Select RAPID-FGFA weight Image Button -->
+     <button type="button" id="rapidFGFA">RAPID-FGFA</button>
+     <py-script>
+         from js import document
+         from pyodide import create_proxy
+ 
+         def rapidFGFAImg(self):
+             print("You have chosen to Select a RAPID-FGFA image weight.")
+         
+         rapidFGFA_proxy = create_proxy(rapidFGFAImg)
+ 
+         document.getElementById("rapidFGFA").addEventListener("click", rapidFGFA_proxy)
+     </py-script>
+
 </body>
 </html>
