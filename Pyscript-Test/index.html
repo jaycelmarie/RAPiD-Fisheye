@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css">
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <title>Fisheye Algorithm</title> 
+</head>
+<body>
+    <!-- Open Camera -->
+    <button type="button" id="openCam">Open Camera</button>
+    <py-script>
+        from js import document
+        from pyodide import create_proxy
+
+        def openCamera(self):
+            print("You have chosen to Open Camera.")
+        
+        camera_proxy = create_proxy(openCamera)
+
+        document.getElementById("openCam").addEventListener("click", camera_proxy)
+    </py-script>
+
+    <!-- Select Image Button -->
+    <button type="button" id="selectImg">Select Image</button>
+    <py-script>
+        from js import document
+        from pyodide import create_proxy
+
+        def viewImage(self):
+            print("You have chosen to Select an Image.")
+        
+        image_proxy = create_proxy(viewImage)
+
+        document.getElementById("selectImg").addEventListener("click", image_proxy)
+    </py-script>
+    
+    <!-- Exit Button -->
+    <button type="button" id="exitBtn">Exit</button>
+    <py-script>
+        from js import document
+        from pyodide import create_proxy
+
+        def exit(self):
+            print("Exiting..")
+        
+        exit_proxy = create_proxy(exit)
+
+        document.getElementById("exitBtn").addEventListener("click", exit_proxy)
+    </py-script>
+</body>
+</html>
