@@ -1,0 +1,36 @@
+body{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 200px;
+    background: linear-gradient(#015669, #1c2777, #3109c1, #140149);
+}
+
+button {
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    color:#ffffff;
+}
+/* add container white box */
+
+#openCam{
+    background: linear-gradient(#d64eff, #9f1bc7, #5f0c79);
+}
+
+#rapid{
+    background: linear-gradient(#21cf95, #109267, #0b6648);
+}
+
+#rapidFA{
+    background: linear-gradient(#ec4e76, #a51c3f, #570e21);
+}
+
+#rapidFGFA{
+    background: linear-gradient(#4b1fc5, #2c088f, #140149);
+}
