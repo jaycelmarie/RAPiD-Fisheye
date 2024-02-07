@@ -38,10 +38,11 @@
         <py-script>
             from js import document
             from pyodide import create_proxy
+            from api import Detector
 
             def rapidImg(self):
                 print("You have chosen to Select a RAPID image weight.")
-                
+
                 detector = Detector(model_name='rapid',
                     weights_path='./weights/pL1_MWHB1024_Mar11_4000.ckpt',
                     use_cuda=False)
