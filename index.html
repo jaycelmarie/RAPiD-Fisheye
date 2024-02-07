@@ -8,7 +8,7 @@
 
     <py-env>
         - paths:
-            - ./example1.py
+            - ./example.py
     </py-env>
     <title>Fisheye Algorithm</title> 
 </head>
@@ -33,7 +33,29 @@
         </py-script> -->
 
         <!-- Select RAPID weight Image Button -->
-        <button type="button" id="rapid" pys-onClick="on_click">RAPID</button>
+        <button type="button" id="rapid">RAPID</button>
+
+        <py-script>
+            from js import document
+            from pyodide import create_proxy
+
+            def rapidImg(self):
+                print("You have chosen to Select a RAPID image weight.")
+                
+                detector = Detector(model_name='rapid',
+                    weights_path='./weights/pL1_MWHB1024_Mar11_4000.ckpt',
+                    use_cuda=False)
+
+                detector.detect_one(img_path='./images/exhibition.jpg',
+                                    input_size=1024, conf_thres=0.3,
+                                    visualize=True)
+
+            
+            rapid_proxy = create_proxy(rapidImg)
+
+            document.getElementById("rapid").addEventListener("click", rapid_proxy)
+        </py-script>
+
 
         <!-- Select RAPID-FA weight Image Button -->
         <!-- <button type="button" id="rapidFA" pys-onClick="rapid">RAPID-FA</button>
