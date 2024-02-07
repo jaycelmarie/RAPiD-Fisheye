@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/pyscript.css">
     <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+
+    <pr-env>
+        - paths:
+            - ./example.py
+    </pr-env>
     <title>Fisheye Algorithm</title> 
 </head>
 <body>
@@ -29,24 +34,8 @@
 
         <!-- Select RAPID weight Image Button -->
         <button type="button" id="rapid">RAPID</button>
-        <py-script>
-            from js import document
-            from pyodide import create_proxy
-            from api import Detector
-            import cv2
-            import easygui
-
-            def rapidImg(self):
-                # Initialize detector
-                detector = Detector(model_name='rapid',
-                                    weights_path='./weights/pL1_MWHB1024_Mar11_4000.ckpt',
-                                    use_cuda=False)
+        <py-script src="example.py">
             
-                read_img = easygui.fileopenbox(filetypes=["*.jpg","*.jpeg","*.png"])
-            
-            rapid_proxy = create_proxy(rapidImg)
-
-            document.getElementById("rapid").addEventListener("click", rapid_proxy)
         </py-script>
 
         <!-- Select RAPID-FA weight Image Button -->
