@@ -6,65 +6,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="src/pyscript.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
+    
     <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
     <title>Fisheye Algorithm</title> 
 </head>
 <body>
-    <!-- Open Camera -->
-    <button type="button" id="openCam">Open Camera</button>
-    <py-script>
-        from js import document
-        from pyodide import create_proxy
 
-        def openCamera(self):
-            print("You have chosen to Open Camera.")
+    <div class="container">
         
-        camera_proxy = create_proxy(openCamera)
-
-        document.getElementById("openCam").addEventListener("click", camera_proxy)
-    </py-script>
-
-    <!-- Select RAPID weight Image Button -->
-    <button type="button" id="rapid">RAPID</button>
-    <py-script>
-        from js import document
-        from pyodide import create_proxy
-
-        def rapidImg(self):
-            print("You have chosen to Select a RAPID image weight.")
+        <h1>Menu</h1>
         
-        rapid_proxy = create_proxy(rapidImg)
+        <!-- Open Camera -->
+        <button type="button" id="openCam">CAMERA</button>
+        <py-script>
+            from js import document
+            from pyodide import create_proxy
 
-        document.getElementById("rapid").addEventListener("click", rapid_proxy)
-    </py-script>
+            def openCamera(self):
+                print("You have chosen to Open Camera.")
+            
+            camera_proxy = create_proxy(openCamera)
 
-    <!-- Select RAPID-FA weight Image Button -->
-    <button type="button" id="rapidFA">RAPID-FA</button>
-    <py-script>
-        from js import document
-        from pyodide import create_proxy
+            document.getElementById("openCam").addEventListener("click", camera_proxy)
+        </py-script>
 
-        def rapidFAImg(self):
-            print("You have chosen to Select a RAPIDFA image weight.")
-        
-        rapidFA_proxy = create_proxy(rapidFAImg)
+        <!-- Select RAPID weight Image Button -->
+        <button type="button" id="rapid">RAPID</button>
+        <py-script>
+            from js import document
+            from pyodide import create_proxy
 
-        document.getElementById("rapidFA").addEventListener("click", rapidFA_proxy)
-    </py-script>
+            def rapidImg(self):
+                print("You have chosen to Select a RAPID image weight.")
+            
+            rapid_proxy = create_proxy(rapidImg)
 
-     <!-- Select RAPID-FGFA weight Image Button -->
-     <button type="button" id="rapidFGFA">RAPID-FGFA</button>
-     <py-script>
-         from js import document
-         from pyodide import create_proxy
- 
-         def rapidFGFAImg(self):
-             print("You have chosen to Select a RAPID-FGFA image weight.")
-         
-         rapidFGFA_proxy = create_proxy(rapidFGFAImg)
- 
-         document.getElementById("rapidFGFA").addEventListener("click", rapidFGFA_proxy)
-     </py-script>
+            document.getElementById("rapid").addEventListener("click", rapid_proxy)
+        </py-script>
 
+        <!-- Select RAPID-FA weight Image Button -->
+        <button type="button" id="rapidFA">RAPID-FA</button>
+        <py-script>
+            from js import document
+            from pyodide import create_proxy
+
+            def rapidFAImg(self):
+                print("You have chosen to Select a RAPIDFA image weight.")
+            
+            rapidFA_proxy = create_proxy(rapidFAImg)
+
+            document.getElementById("rapidFA").addEventListener("click", rapidFA_proxy)
+        </py-script>
+
+        <!-- Select RAPID-FGFA weight Image Button -->
+        <button type="button" id="rapidFGFA">RAPID-FGFA</button>
+        <py-script>
+            from js import document
+            from pyodide import create_proxy
+    
+            def rapidFGFAImg(self):
+                print("You have chosen to Select a RAPID-FGFA image weight.")
+            
+            rapidFGFA_proxy = create_proxy(rapidFGFAImg)
+    
+            document.getElementById("rapidFGFA").addEventListener("click", rapidFGFA_proxy)
+        </py-script>
+
+    </div>
 </body>
 </html>

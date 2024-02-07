@@ -1,36 +1,67 @@
 body{
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    margin-top: 200px;
-    background: linear-gradient(#015669, #1c2777, #3109c1, #140149);
+    /* background-image: linear-gradient(#034d5e, #1c2777, #3109c1, #1e065f, #034d5e); */
+    background-image: url('https://64.media.tumblr.com/bde83f787eb2843798d5d24910d54e6e/f145147b69889cf3-79/s1280x1920/7eac1ab8c1bab6f9703029083032ae7830ab9b91.gifv');
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
 }
-
+ 
 button {
-    border: none;
+    border: 1px solid #000000;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
     margin: 4px 2px;
     cursor: pointer;
     color:#ffffff;
+    border-radius: 15px;
 }
-/* add container white box */
+
+h1{
+    color:#ffffff;
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 20px;
+}
+
+.container{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 100px;
+    /* background:linear-gradient(to bottom right, #676669, #2b2b2c, #676669); */
+    padding: 100px;
+    padding-top: 150px;
+    border-radius: 20px;
+    background-image: url('https://cliply.co/wp-content/uploads/2021/07/402107330_WHITE_WAVES_400px.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
 
 #openCam{
-    background: linear-gradient(#d64eff, #9f1bc7, #5f0c79);
+    /* background: linear-gradient(#d64eff, #9f1bc7, #5f0c79); */
+    background: linear-gradient(#b4284b, #8d1533, #470b1b);
 }
 
 #rapid{
-    background: linear-gradient(#21cf95, #109267, #0b6648);
+    /* background: linear-gradient(#21cf95, #109267, #0b6648); */
+    background: linear-gradient(#b4284b, #8d1533, #470b1b);
 }
 
 #rapidFA{
-    background: linear-gradient(#ec4e76, #a51c3f, #570e21);
+    background: linear-gradient(#b4284b, #8d1533, #470b1b);
 }
 
 #rapidFGFA{
-    background: linear-gradient(#4b1fc5, #2c088f, #140149);
+    background: linear-gradient(#b4284b, #8d1533, #470b1b);
+}
+
+a:hover{
+    color: #f00;
 }
