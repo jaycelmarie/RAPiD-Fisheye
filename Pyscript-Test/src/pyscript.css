@@ -2,6 +2,7 @@ body{
     /* background-image: linear-gradient(#034d5e, #1c2777, #3109c1, #1e065f, #034d5e); */
     background-image: url('https://cliply.co/wp-content/uploads/2019/06/401906190_ITS_COMPLICATED_400px.gif');
     background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
     overflow: hidden;
 }
@@ -58,8 +59,4 @@ h1{
 
 #rapidFGFA{
     background: linear-gradient(#b4284b, #8d1533, #470b1b);
-}
-
-a:hover{
-    color: #f00;
 }
