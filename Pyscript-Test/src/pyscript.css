@@ -1,6 +1,6 @@
 body{
     /* background-image: linear-gradient(#034d5e, #1c2777, #3109c1, #1e065f, #034d5e); */
-    background-image: url('https://64.media.tumblr.com/bde83f787eb2843798d5d24910d54e6e/f145147b69889cf3-79/s1280x1920/7eac1ab8c1bab6f9703029083032ae7830ab9b91.gifv');
+    background-image: url('https://cliply.co/wp-content/uploads/2019/06/401906190_ITS_COMPLICATED_400px.gif');
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
@@ -21,9 +21,10 @@ button {
 }
 
 h1{
-    color:#ffffff;
+    color:#000000;
     margin: auto;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
     padding-bottom: 20px;
 }
 
@@ -42,7 +43,6 @@ h1{
     background-size: cover;
     overflow: hidden;
 }
-
 
 #openCam{
     /* background: linear-gradient(#d64eff, #9f1bc7, #5f0c79); */
