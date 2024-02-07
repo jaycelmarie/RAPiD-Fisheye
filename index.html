@@ -6,10 +6,10 @@
     <link rel="stylesheet" href="src/pyscript.css">
     <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
 
-    <pr-env>
+    <py-env>
         - paths:
-            - ./example.py
-    </pr-env>
+            - ./example1.py
+    </py-env>
     <title>Fisheye Algorithm</title> 
 </head>
 <body>
@@ -19,7 +19,7 @@
         <h1>Menu</h1>
 
         <!-- Open Camera -->
-        <button type="button" id="openCam">CAMERA</button>
+        <!-- <button type="button" id="openCam">CAMERA</button>
         <py-script>
             from js import document
             from pyodide import create_proxy
@@ -30,16 +30,13 @@
             camera_proxy = create_proxy(openCamera)
 
             document.getElementById("openCam").addEventListener("click", camera_proxy)
-        </py-script>
+        </py-script> -->
 
         <!-- Select RAPID weight Image Button -->
-        <button type="button" id="rapid">RAPID</button>
-        <py-script src="example.py">
-            
-        </py-script>
+        <button type="button" id="rapid" pys-onClick="on_click">RAPID</button>
 
         <!-- Select RAPID-FA weight Image Button -->
-        <button type="button" id="rapidFA" pys-onClick="rapid">RAPID-FA</button>
+        <!-- <button type="button" id="rapidFA" pys-onClick="rapid">RAPID-FA</button>
         <py-script>
             from js import document
             from pyodide import create_proxy
@@ -50,10 +47,10 @@
             rapidFA_proxy = create_proxy(rapidFAImg)
 
             document.getElementById("rapidFA").addEventListener("click", rapidFA_proxy)
-        </py-script>
+        </py-script> -->
 
         <!-- Select RAPID-FGFA weight Image Button -->
-        <button type="button" id="rapidFGFA">RAPID-FGFA</button>
+        <!-- <button type="button" id="rapidFGFA">RAPID-FGFA</button>
         <py-script>
             from js import document
             from pyodide import create_proxy
@@ -64,7 +61,7 @@
             rapidFGFA_proxy = create_proxy(rapidFGFAImg)
     
             document.getElementById("rapidFGFA").addEventListener("click", rapidFGFA_proxy)
-        </py-script>
+        </py-script> -->
 
     </div>
 </body>
