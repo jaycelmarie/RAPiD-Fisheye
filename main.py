@@ -70,7 +70,7 @@ frame.pack(pady=20, padx=60, fill="both", expand=True)
 label = customtkinter.CTkLabel(master=frame, text="Welcome")
 label.pack(pady=15, padx=10)
 
-openCameraBtn = customtkinter.CTkButton(master=frame, text="Camera", command=camera)
+openCameraBtn = customtkinter.CTkButton(master=frame, text="Camera", command=camera, height=100, width=100)
 openCameraBtn.pack(pady=15, padx=12)
 
 rapidBtn = customtkinter.CTkButton(master=frame, text="RAPID Image", command=rapid)
