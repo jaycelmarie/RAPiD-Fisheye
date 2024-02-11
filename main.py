@@ -70,16 +70,19 @@ frame.pack(pady=20, padx=60, fill="both", expand=True)
 label = customtkinter.CTkLabel(master=frame, text="Welcome")
 label.pack(pady=12, padx=10)
 
-openCameraBtn = customtkinter.CTkButton(master=frame, text="Camera", command=camera, height=50, width=120)
+# Button text font
+custom_font =("Times",30,'bold')
+
+openCameraBtn = customtkinter.CTkButton(master=frame, text="Camera", command=camera, height=50, width=120, text_font=custom_font)
 openCameraBtn.pack(pady=12, padx=10)
 
-rapidBtn = customtkinter.CTkButton(master=frame, text="RAPID Image", command=rapid)
+rapidBtn = customtkinter.CTkButton(master=frame, text="RAPID Image", command=rapid, height=50, width=120, text_font=custom_font)
 rapidBtn.pack(pady=12, padx=10)
 
-faBtn = customtkinter.CTkButton(master=frame, text="RAPID-FA Image", command=rapidfa)
+faBtn = customtkinter.CTkButton(master=frame, text="RAPID-FA Image", command=rapidfa, height=50, width=120, text_font=custom_font)
 faBtn.pack(pady=12, padx=10)
 
-fgfaBtn = customtkinter.CTkButton(master=frame, text="RAPID-FGFA Image", command=rapidfgfa)
+fgfaBtn = customtkinter.CTkButton(master=frame, text="RAPID-FGFA Image", command=rapidfgfa, height=50, width=120, text_font=custom_font)
 fgfaBtn.pack(pady=12, padx=10)
 
 exitBtn = customtkinter.CTkButton(master=frame, text="Exit", command=leave)
