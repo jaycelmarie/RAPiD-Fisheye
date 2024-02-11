@@ -11,7 +11,7 @@ customtkinter.set_default_color_theme("dark-blue")
 
 # GUI
 root = customtkinter.CTk()
-root.geometry("500x350")
+root.geometry("800x550")
 
 def camera():
     print("You have chosen to Open Camera.")
