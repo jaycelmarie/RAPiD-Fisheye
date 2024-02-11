@@ -70,15 +70,8 @@ frame.pack(pady=20, padx=60, fill="both", expand=True)
 label = customtkinter.CTkLabel(master=frame, text="Welcome")
 label.pack(pady=12, padx=10)
 
-#grid manager to set label localization
-label.grid(row=0, column=0)
-
-#label row and column configure: first argument is col or row id
-label.grid_rowconfigure(0, weight=1)
-label.grid_columnconfigure(0, weight=1)
-
 # Button text font
-custom_font =("Helvetica",20,'bold')
+custom_font =("Helvetica",20)
 
 openCameraBtn = customtkinter.CTkButton(master=frame, text="Camera", command=camera, height=50, width=120, font=custom_font)
 openCameraBtn.pack(pady=12, padx=10)
