@@ -1,5 +1,6 @@
 import customtkinter
 from api import Detector
+from api2 import Detector
 import sys
 import cv2
 import easygui
