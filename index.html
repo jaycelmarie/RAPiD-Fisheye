@@ -6,23 +6,17 @@
     <link rel="stylesheet" href="src/pyscript.css">
     <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
 
-    <!-- <py-env>
+    <py-env>
+        - matplotlib
+        - numpy
         - paths:
             - ./example.py
             - ./api.py
-    </py-env> -->
+    </py-env>
+
     <title>Fisheye Algorithm</title> 
 </head>
 <body>
-
-    <py-config>
-        packages = ['numpy', 'matplotlib', 'Image', 'tqdm', 'torch', 'visualization', 'dataloader', 'utils']
-
-        [[fetch]]
-        files = ['api'.py', 'example.py']
-        from = 'package'
-        to_folder = 'package'
-    </py-config>
 
     <div class="container">
         
