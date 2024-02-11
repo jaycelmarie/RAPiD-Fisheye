@@ -12,7 +12,14 @@ customtkinter.set_default_color_theme("dark-blue")
 root = customtkinter.CTk()
 root.geometry("500x350")
 
-def viewimages():
+def camera():
+    print("You have chosen to Open Camera.")
+    source="rtsp://192.168.56.1:8554/profile0"
+    cap=cv2.VideoCapture(source)
+    ret, frame=cap.read()
+    cv2.imwrite("frame.jpg", frame)
+
+def rapid():
     # Initialize detector
     detector = Detector(model_name='rapid',
                         weights_path='./weights/pL1_MWHB1024_Mar11_4000.ckpt',
@@ -25,12 +32,27 @@ def viewimages():
                         input_size=1024, conf_thres=0.3,
                         visualize=True)
     
-def camera():
-    print("You have chosen to Open Camera.")
-    source="rtsp://192.168.56.1:8554/profile0"
-    cap=cv2.VideoCapture(source)
-    ret, frame=cap.read()
-    cv2.imwrite("frame.jpg", frame)
+def rapidfa():
+    # Initialize detector
+    detector = Detector(model_name='rapid',
+                        weights_path='./weights/RAPiD_FA.ckpt',
+                        use_cuda=False)
+
+    # A simple example to run on a single image and plt.imshow() it
+    detector.detect_one(img_path='./examples/warehouse_short/warehouse_000451.png',
+                        input_size=1024, conf_thres=0.3,
+                        visualize=True)
+
+def rapidfgfa():
+    # Initialize detector
+    detector = Detector(model_name='rapid',
+                        weights_path='./weights/RAPiD_FGFA.ckpt',
+                        use_cuda=False)
+
+    # A simple example to run on a single image and plt.imshow() it
+    detector.detect_one(img_path='./examples/warehouse_short/warehouse_000451.png',
+                        input_size=1024, conf_thres=0.3,
+                        visualize=True)
 
 def leave():
     sys.exit()
@@ -43,11 +65,17 @@ frame.pack(pady=20, padx=60, fill="both", expand=True)
 label = customtkinter.CTkLabel(master=frame, text="Welcome")
 label.pack(pady=12, padx=10)
 
-openCameraBtn = customtkinter.CTkButton(master=frame, text="Open Camera", command=camera)
+openCameraBtn = customtkinter.CTkButton(master=frame, text="Camera", command=camera)
 openCameraBtn.pack(pady=12, padx=10)
 
-imageBtn = customtkinter.CTkButton(master=frame, text="Image", command=viewimages)
-imageBtn.pack(pady=12, padx=10)
+rapidBtn = customtkinter.CTkButton(master=frame, text="RAPID Image", command=rapid)
+rapidBtn.pack(pady=12, padx=10)
+
+faBtn = customtkinter.CTkButton(master=frame, text="RAPID-FA Image", command=rapidfa)
+faBtn.pack(pady=12, padx=10)
+
+fgfaBtn = customtkinter.CTkButton(master=frame, text="RAPID-FGFA Image", command=rapidfgfa)
+fgfaBtn.pack(pady=12, padx=10)
 
 exitBtn = customtkinter.CTkButton(master=frame, text="Exit", command=leave)
 exitBtn.pack(pady=12, padx=10)
