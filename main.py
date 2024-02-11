@@ -68,21 +68,21 @@ frame = customtkinter.CTkFrame(master=root)
 frame.pack(pady=20, padx=60, fill="both", expand=True)
 
 label = customtkinter.CTkLabel(master=frame, text="Welcome")
-label.pack(pady=12, padx=10)
+label.pack(pady=15, padx=10)
 
 openCameraBtn = customtkinter.CTkButton(master=frame, text="Camera", command=camera)
-openCameraBtn.pack(pady=12, padx=10)
+openCameraBtn.pack(pady=15, padx=12)
 
 rapidBtn = customtkinter.CTkButton(master=frame, text="RAPID Image", command=rapid)
-rapidBtn.pack(pady=12, padx=10)
+rapidBtn.pack(pady=15, padx=12)
 
 faBtn = customtkinter.CTkButton(master=frame, text="RAPID-FA Image", command=rapidfa)
-faBtn.pack(pady=12, padx=10)
+faBtn.pack(pady=15, padx=12)
 
 fgfaBtn = customtkinter.CTkButton(master=frame, text="RAPID-FGFA Image", command=rapidfgfa)
-fgfaBtn.pack(pady=12, padx=10)
+fgfaBtn.pack(pady=15, padx=12)
 
 exitBtn = customtkinter.CTkButton(master=frame, text="Exit", command=leave)
-exitBtn.pack(pady=12, padx=10)
+exitBtn.pack(pady=15, padx=12)
 
 root.mainloop()
