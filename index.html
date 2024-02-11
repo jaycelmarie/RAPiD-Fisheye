@@ -35,9 +35,22 @@
 
         <!-- Select RAPID weight Image Button -->
         <button type="button" id="rapid">RAPID</button>
-
+        <!-- 
         <py-script src="./example.py">
             from api import Detector
+        </py-script> -->
+
+        <py-script>
+            from api import Detector
+
+            detector = Detector(model_name='rapid',
+                                weights_path='./weights/pL1_MWHB1024_Mar11_4000.ckpt',
+                                use_cuda=False)
+
+            detector.detect_one(img_path='./images/exhibition.jpg',
+                                input_size=1024, conf_thres=0.3,
+                                visualize=True)
+
         </py-script>
 
 
