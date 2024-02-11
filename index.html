@@ -6,14 +6,23 @@
     <link rel="stylesheet" href="src/pyscript.css">
     <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
 
-    <py-env>
+    <!-- <py-env>
         - paths:
             - ./example.py
             - ./api.py
-    </py-env>
+    </py-env> -->
     <title>Fisheye Algorithm</title> 
 </head>
 <body>
+
+    <py-config>
+        packages = ['numpy', 'matplotlib', 'Image', 'tqdm', 'torch', 'visualization', 'dataloader', 'utils']
+
+        [[fetch]]
+        files = ['api'.py', 'example.py']
+        from = 'package'
+        to_folder = 'package'
+    </py-config>
 
     <div class="container">
         
@@ -40,7 +49,7 @@
             from api import Detector
         </py-script> -->
 
-        <py-script src="./api.py">
+        <py-script>
             from api import Detector
 
             detector = Detector(model_name='rapid',
