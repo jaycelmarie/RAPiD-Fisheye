@@ -71,7 +71,7 @@ label = customtkinter.CTkLabel(master=frame, text="Welcome")
 label.pack(pady=12, padx=10)
 
 # Button text font
-custom_font =("Times",30,'bold')
+custom_font =("Times",10,'bold')
 
 openCameraBtn = customtkinter.CTkButton(master=frame, text="Camera", command=camera, height=50, width=120, font=custom_font)
 openCameraBtn.pack(pady=12, padx=10)
