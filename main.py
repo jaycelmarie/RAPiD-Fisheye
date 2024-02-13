@@ -15,6 +15,20 @@ root.geometry("800x550")
 
 def camera():
     print("Turning on Camera..")
+    
+    source = "rtsp://user:test1234@192.168.1.101:8554/profile0"      
+    cap = cv2.VideoCapture(source)
+
+    while True:
+        ret, frame = cap.read()
+
+        cv2.imshow('video', frame)
+
+        if cv2.waitKey(20) == ord("q"):
+            break
+
+    cap.release()
+    cv2.destroyAllWindows()
 
 def screenshot():
     print("Taking Screenshot...")
