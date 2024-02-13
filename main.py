@@ -19,7 +19,7 @@ def camera():
     source = "rtsp://user:test1234@192.168.1.101:8554/profile0"      
     cap = cv2.VideoCapture(source)
 
-    while True:
+    while cap.isOpened():
         ret, frame = cap.read()
 
         # Initialize detector
@@ -28,7 +28,7 @@ def camera():
                             use_cuda=False)
         
         # A simple example to run on a single image and plt.imshow() it
-        detector.detect_one(img_path=frame,
+        detector.detect_imgSeq(img_path=frame,
                             input_size=1024, conf_thres=0.3,
                             visualize=True)
 
