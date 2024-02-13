@@ -159,22 +159,22 @@ class Detector():
         return dts
 
 
-def detect_once(model, pil_img, conf_thres, nms_thres=0.45, input_size=608):
-    '''
-    Run the model on the pil_img and return the detections.
-    '''
-    device = next(model.parameters()).device
-    ori_w, ori_h = pil_img.width, pil_img.height
-    input_img, _, pad_info = utils.rect_to_square(pil_img, None, input_size, 0)
+    def detect_once(model, pil_img, conf_thres, nms_thres=0.45, input_size=608):
+        '''
+        Run the model on the pil_img and return the detections.
+        '''
+        device = next(model.parameters()).device
+        ori_w, ori_h = pil_img.width, pil_img.height
+        input_img, _, pad_info = utils.rect_to_square(pil_img, None, input_size, 0)
 
-    input_img = tvf.to_tensor(input_img).to(device=device)
-    with torch.no_grad():
-        dts = model(input_img[None]).cpu().squeeze()
-    dts = dts[dts[:,5] >= conf_thres].cpu()
-    dts = utils.nms(dts, is_degree=True, nms_thres=0.45)
-    dts = utils.detection2original(dts, pad_info.squeeze())
-    # np_img = np.array(pil_img)
-    # api_utils.draw_dt_on_np(np_img, detections)
-    # plt.imshow(np_img)
-    # plt.show()
-    return dts
+        input_img = tvf.to_tensor(input_img).to(device=device)
+        with torch.no_grad():
+            dts = model(input_img[None]).cpu().squeeze()
+        dts = dts[dts[:,5] >= conf_thres].cpu()
+        dts = utils.nms(dts, is_degree=True, nms_thres=0.45)
+        dts = utils.detection2original(dts, pad_info.squeeze())
+        # np_img = np.array(pil_img)
+        # api_utils.draw_dt_on_np(np_img, detections)
+        # plt.imshow(np_img)
+        # plt.show()
+        return dts
