@@ -22,8 +22,6 @@ def camera():
     while True:
         ret, frame = cap.read()
 
-        cv2.imshow('video', frame)
-
         # Initialize detector
         detector = Detector(model_name='rapid',
                             weights_path='./weights/pL1_MWHB1024_Mar11_4000.ckpt',
@@ -33,6 +31,9 @@ def camera():
         detector.detect_one(img_path=frame,
                             input_size=1024, conf_thres=0.3,
                             visualize=True)
+
+
+        cv2.imshow('video', frame)
 
         if cv2.waitKey(20) == ord("q"):
             break
