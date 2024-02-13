@@ -28,7 +28,7 @@ def camera():
                             use_cuda=False)
         
         # A simple example to run on a single image and plt.imshow() it
-        detector.detect_imgSeq(img_path=frame,
+        detector.detect_once(img_path=frame,
                             input_size=1024, conf_thres=0.3,
                             visualize=True)
 
