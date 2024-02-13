@@ -14,11 +14,15 @@ root = customtkinter.CTk()
 root.geometry("800x550")
 
 def camera():
-    print("You have chosen to Open Camera.")
+    print("Turning on Camera..")
+
+def screenshot():
+    print("Taking Screenshot...")
     source = "rtsp://user:test1234@192.168.1.101:8554/profile0"   
     cap=cv2.VideoCapture(source)
     ret, frame=cap.read()
     cv2.imwrite("frame.jpg", frame)
+    print("=== Screenshot has been taken! ===")
 
 def rapid():
     # Initialize detector
@@ -73,8 +77,11 @@ label.pack(pady=12, padx=10)
 # Button text font
 custom_font = ("Helvetica",20)
 
-openCameraBtn = customtkinter.CTkButton(master=frame, text="Camera", command=camera, height=50, width=220, font=custom_font, hover_color="green", corner_radius=40)
+openCameraBtn = customtkinter.CTkButton(master=frame, text="Open Camera", command=camera, height=50, width=220, font=custom_font, hover_color="green", corner_radius=40)
 openCameraBtn.pack(pady=12, padx=10)
+
+ssBtn = customtkinter.CTkButton(master=frame, text="Take Screenshot", command=screenshot, height=50, width=220, font=custom_font, hover_color="green", corner_radius=40)
+ssBtn.pack(pady=12, padx=10)
 
 rapidBtn = customtkinter.CTkButton(master=frame, text="RAPID Image", command=rapid, height=50, width=220, font=custom_font, hover_color="green", corner_radius=40)
 rapidBtn.pack(pady=12, padx=10)
