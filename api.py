@@ -94,7 +94,7 @@ class Detector():
         '''
         gt_path = kwargs['gt_path'] if 'gt_path' in kwargs else None
 
-        ims = dataloader.Images4Detector(img_dir, gt_path) # TODO
+        ims = dataloader.Images4Detector(gt_path) # TODO
         dts = self._detect_iter(iter(ims), **kwargs)
         return dts
 
