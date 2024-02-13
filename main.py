@@ -32,8 +32,7 @@ def camera():
                             input_size=1024, conf_thres=0.3,
                             visualize=True)
 
-
-        cv2.imshow('video', frame)
+        cv2.imwrite('videoframe.jpg', frame)
 
         if cv2.waitKey(20) == ord("q"):
             break
