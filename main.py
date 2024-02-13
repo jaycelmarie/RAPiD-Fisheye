@@ -15,7 +15,7 @@ root.geometry("800x550")
 
 def camera():
     print("You have chosen to Open Camera.")
-    source="rtsp://192.168.56.1:8554/profile0"
+    source = "rtsp://user:test1234@192.168.1.101:8554/profile0"   
     cap=cv2.VideoCapture(source)
     ret, frame=cap.read()
     cv2.imwrite("frame.jpg", frame)
